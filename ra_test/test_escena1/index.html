@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escena inicio</title>
+    <meta name="description" content="Images - A-Frame">
+      <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    
+      
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC">
+      <a-assets>
+        <img id="detective" src="assets/img/personaje/detective.png">
+        <a-asset-item id="faro-obj" src="assets/models/faro/faro.obj"></a-asset-item>
+        <a-asset-item id="faro-mtl" src="assets/models/faro/faro.mtl"></a-asset-item>
+        <a-asset-item id="crate-obj" src="assets/models/crate/crate.obj"></a-asset-item>
+        <a-asset-item id="crate-mtl" src="assets/models/crate/crate.mtl"></a-asset-item>
+        <a-asset-item id="tree1" src="assets/models/tree1.glb"></a-asset-item>
+        <a-asset-item id="brainstem" src="https://cdn.aframe.io/test-models/models/glTF-2.0/brainstem/BrainStem.gltf"></a-asset-item>
+        <a-asset-item id="faro2" src="https://pjarpa.github.io/3d_models/scene.gltf"></a-asset-item>
+        <a-asset-item id="faro3" src="assets/models/faro2/faro2.gltf"></a-asset-item>
+        
+        
+      </a-assets>
+
+           
+      <a-entity position="0 0 -12">
+    
+        <a-entity gltf-model="#brainstem" position="-5 0 8" scale="3 3 3"></a-entity>
+        <a-entity gltf-model="#faro2" position="-3 0 8" scale="2 2 2"></a-entity>
+          
+        <a-entity gltf-model="#faro3" scale="3 3 3" crossOrigin="anonymous"></a-entity>
+        <a-text value="Hola" color="#000000" position="0 0 6" scale="1.5 1.5 1.5"></a-text>
+        <a-entity obj-model="obj: #faro-obj; mtl: #faro-mtl" position="5 0 5" scale="3 3 3"></a-entity>
+        <a-entity obj-model="obj: #crate-obj; mtl: #crate-mtl" position="5 0 10"></a-entity>
+        <a-text value="OBJ" color="#000000" position="0 0 6" scale="1.5 1.5 1.5"></a-text>
+        <a-image position="3 0 0" width="4" height="14" src="#detective"></a-image>
+        <a-gltf-model src="#tree1" position="1 0 -1" rotation="0 30 0"
+                       scale="1.4 1.4 1.4"></a-gltf-model>
+    
+    
+     </a-entity>
+
+     
+    </a-scene>
+  </body>
+</html>
