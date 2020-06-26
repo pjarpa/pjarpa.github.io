@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escena interior bar</title>
+    <meta name="description" content="Escena Bar">
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+      
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC" sound="src:files/audio/sonido_intro.mp3; loop:true; autoplay: true; volume:0.2; positional: false">
+      <a-assets>
+          
+          
+        <img id="detective" src="assets/img/personaje/detective.png">
+        
+        <a-asset-item id="matilda" src="assets/models/matilda/scene.gltf"></a-asset-item>
+        
+        <a-asset-item id="room1" src="assets/models/interior_bar1/scene.gltf"></a-asset-item>
+          
+           
+      </a-assets>
+
+           
+      <a-entity position="0 0 -15">
+          
+         <!-- Personajes. -->
+    
+        <a-image position="0 0 0" width="4" height="12" src="#detective"></a-image>
+          
+        <a-entity gltf-model="#matilda" position="3 0 8" scale="0.02 0.02 0.02" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          
+        <!-- Elementos. -->
+          
+          
+        <a-gltf-model src="#room1" position="-2 -0 -10" rotation="4 -40 0" scale="0.025 0.025 0.025"></a-gltf-model>
+          
+    
+          
+          
+          
+          
+        <!-- Textos. -->
+          
+        <a-text value="Saludos virtuales" color="#8ba832" position="0 8 0" scale="4 4 4"></a-text>
+        
+         
+        <a-text value="Hola" color="#000000" position="0 6 6" scale="1.5 1.5 1.5"></a-text>
+        <a-entity obj-model="obj: #crate-obj; mtl: #crate-mtl" position="5 0 10"></a-entity>
+          
+        <!-- Escenario. -->
+        
+        
+        <a-gltf-model src="#bar-exterior" position="30 0 0" rotation="0 -40 0" scale="4 4 4"></a-gltf-model>
+          
+        
+    
+        
+      </a-entity>
+        
+        <!-- Sounds. -->
+       
+          
+    
+     
+
+     
+    </a-scene>
+  </body>
+</html>
