@@ -1,0 +1,153 @@
+<!-- MIX AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf 
+v1. https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf
+v2. https://medium.com/@aschmelyun/so-you-want-to-get-started-with-ar-js-41dd4fba5f81 version 2 28/06/2020, incluyendo assets. 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <title>LA FORMULA SECRETA</title>
+    <meta name="description" content="DESCUBRE TU HISTORIA">
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+    
+    <!--- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script> --->
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    
+
+
+  </head>
+
+
+<body style='margin : 0px; overflow: hidden;'>
+   
+
+    <a-scene embedded arjs='sourceType: webcam;'  sound="src:assets/audio/musica_02.mp3; loop:true; autoplay: true; volume:0.2; positional: false">
+	   
+	   
+  <a-assets> <!--- elementos --->
+                 
+       
+        <a-asset-item id="exterior" src="assets/models/escenario_exterior/escena_exterior.gltf"></a-asset-item>
+        <a-asset-item id="restoran" src="assets/models/escenario_comida/escena_restoran.gltf"></a-asset-item>
+        <a-asset-item id="salamusica" src="assets/models/escenario_musica/escena_musica.gltf"></a-asset-item>
+        <a-asset-item id="terraza" src="assets/models/escenario_terraza/escena_terraza.gltf"></a-asset-item>
+        <a-asset-item id="bar" src="assets/models/escenario_bar/escena_bar.gltf"></a-asset-item>
+        <a-asset-item id="bodega" src="assets/models/escenario_bodega/escena_bodega.gltf"></a-asset-item>
+        <img id="hsIcon" src="assets/img/XR-Hotspot.png">
+        <img id="texto-exterior01" crossorigin="anonymous" src="assets/img/texto_exterior_01.png">
+        <img id="texto-exterior02" crossorigin="anonymous" src="assets/img/texto_exterior_02.png">
+        <img id="texto-restoran01" crossorigin="anonymous" src="assets/img/texto_restoran_01.png">
+        <img id="texto-restoran02" crossorigin="anonymous" src="assets/img/texto_restoran_02.png">
+        <img id="texto-restoran03" crossorigin="anonymous" src="assets/img/texto_restoran_03.png">
+        <img id="texto-restoran04" crossorigin="anonymous" src="assets/img/texto_restoran_04.png">
+        <img id="texto-restoran05" crossorigin="anonymous" src="assets/img/texto_restoran_05.png">
+        <img id="boton-continuar" crossorigin="anonymous" src="assets/img/boton_continuar.png">
+        <img id="boton-libro" crossorigin="anonymous" src="assets/img/boton_libro.png">
+        <img id="boton-musica" crossorigin="anonymous" src="assets/img/boton_musica.png">
+        <img id="boton-salir" crossorigin="anonymous" src="assets/img/boton_salida.png">
+      
+      
+      
+      
+        
+      
+      
+          
+   </a-assets>
+        
+
+      
+       
+       
+       
+     <!-- Default lighting -->
+       
+       <a-entity light="type: point; intensity: 1.72; distance: 50; angle: 120; decay: 2" position="-2 4 4"></a-entity>
+       <a-entity light="type: point; intensity: 0.3; distance: 20; angle: 60; decay: 2" position="2 4 4"></a-entity>
+       <a-entity light="type: directional; color: #FFF; intensity: 1" position="1 1 -8"></a-entity>
+		
+     
+     <!---- 1 - logo alhambra ---> 
+        <a-marker preset="custom" type='pattern' url = "https://pjarpa.github.io/prototipo2/marcadores/pattern-logo.patt">          
+	       
+            <a-entity gltf-model="#exterior" rotation="0 0 0" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+            
+            <a-entity light="type: directional; color: #F2C7C1; intensity: 1" position="1 1 1"></a-entity>
+            
+            <a-entity id="tbHotspot2" class="clickable sceneHotspotIcon tbHotspotIcon" hotspots-component="hstarget: #tbHs2; closetarget: #tbHsClose2; assetlocation: assets/img/hs2.png; hsshader: flat; hotspotname: tbHotspot2Video" position="-0.190 0.860 -1.211" look-at="#lookCube" geometry="primitive: circle" material="src: #hsIcon; shader: flat; side: double" scale="0.25 0.25 0.25" rotation="0 180 0">
+                <a-entity id="tbHotspotBtn2" geometry="" scale="4 4 4" material="opacity: 0; transparent: true; depthTest: false"></a-entity>
+            </a-entity>
+            
+            
+            <a-image src="#texto-exterior01" position="-0.45 1.898 1.106" rotation="0 30 0" geometry="primitive:  plane"></a-image>
+            
+            <a-entity id="links" layout="type: line; margin: 1.5" position="0.626 0.437 1.591">
+                <a-entity template="src: #link" data-src="#texto-exterior02" data-thumb="#texto-exterior01"></a-entity>
+        
+            </a-entity>
+            
+            
+            
+            
+           
+            
+
+        </a-marker>
+        
+        
+	   
+    <!---- 2 - logo bodega --->   
+        <a-marker preset="custom" type='pattern' url = "https://pjarpa.github.io/prototipo2/marcadores/pattern-bodega.patt"> 
+  
+         	<a-entity gltf-model="#bodega" rotation="0 0 0" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+                
+        </a-marker>
+	   
+        
+        
+        
+    <!---- 3 - logo ritmo ---> 
+        <a-marker preset="custom" type='pattern' url = "https://pjarpa.github.io/prototipo2/marcadores/pattern-musica.patt"> 
+            <a-gltf-model src="#salamusica" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5"></a-gltf-model>     
+        </a-marker>
+        
+      
+ 
+        
+    <!---- 4 - logo historias probar los textos ---> 
+        <a-marker preset="custom" type='pattern' url = "https://pjarpa.github.io/prototipo2/marcadores/pattern-libro.patt"> 
+            <a-gltf-model src="#terraza" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5"></a-gltf-model>
+        </a-marker>   
+
+       
+        
+    <!---- 5 - logo sabor ---> 	  
+        <a-marker preset="custom" type='pattern' url = "https://pjarpa.github.io/prototipo2/marcadores/pattern-cubiertos.patt"> 
+      
+            <a-gltf-model src="#restoran" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5"></a-gltf-model>
+            
+            <a-image src="#texto-restoran01" position="-0.398 1.898 0.007" rotation="0 30 0" geometry="primitive:  plane"></a-image>
+        
+                 
+      
+        </a-marker>   
+       
+       
+        
+    <!---- 6 - logo cerveza --->  
+    <a-marker preset="custom" type='pattern' url = "https://pjarpa.github.io/prototipo2/marcadores/pattern-cerveza.patt"> 
+      
+            <a-gltf-model src="#bar" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5"></a-gltf-model>
+        
+      
+    </a-marker>   
+        
+        
+        
+        
+    <a-entity camera >
+        </a-entity>
+  </a-scene>
+  
+  
+  
+</body>
